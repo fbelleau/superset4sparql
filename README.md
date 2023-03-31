@@ -1,4 +1,5 @@
-# superset4sparql
+# Superset4SPARQL
+
 A REST API to query SPARQL endpoints using Apache Superset BI tool using the elasticsearc-dbapi package.
 
 ## Context
@@ -8,8 +9,6 @@ Bio2RDF project was beneficial to the life science community because it provided
 The lack of data visualization tools can hinder the development and usability of semantic web applications by making it difficult to understand and work with complex data structures and relationships. Since the Facet browser of Virtuoso, a web tool that explores RDF triplestore by facet browsing, very few frameworks have eased the building of a dashboard. Although commercial software, such as Ontotext and Stardog, are offering dashboard tools, they cannot match the simplicity and popularity of Tableau and PowerBI.
 
 A mature business intelligence (BI) software tool capable of building a dashboard from SPARQL endpoints could provide significant benefits to the life science community by enabling efficient data analysis, integrating data sources, designing data visualization, and promoting collaboration and sharing.
-
-
 
 ## Goal
 
@@ -71,4 +70,13 @@ WHERE {
 }
 GROUP BY ?enzyme ?title
 ORDER BY DESC(?count)
+````
+
+# SPARQL in Superset, what it could be ! 
+
+<img width="1429" alt="image" src="https://user-images.githubusercontent.com/995409/229241652-25eb6370-5b3d-4b4c-936f-20df35f0323f.png">
+
+<img width="1429" alt="image" src="https://user-images.githubusercontent.com/995409/229241804-d62df880-766a-4070-9c87-ee2c83ca2fc6.png">
+
+
 ````
