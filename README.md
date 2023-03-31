@@ -12,7 +12,7 @@ A mature business intelligence (BI) software tool capable of building a dashboar
 
 ## Goal
 
-The goal of this project is to modify an existing business intelligence (BI) tool to enable it to consume SPARQL endpoints. During the biohackathon, we aim to build BI  tool that will make it possible to build a dashboard from RDF resources in the fields of multi-omics analysis, genomics, transcriptomics, epigenomics, proteomics, protein structures, and biochemical data.
+The goal of this project is to modify an existing business intelligence (BI) tool to enable it to consume SPARQL endpoints. We aim to modify an existing BI  tool that will make it possible to build a dashboard from RDF resources in the fields of multi-omics analysis, genomics, transcriptomics, epigenomics, proteomics, protein structures, and biochemical data.
 
 For this project, we have selected Superset as the dashboard technology. Superset is an open-source Apache BI software that is compatible with many cloud-based SQL technologies. One such technology is Elasticsearch, for which a Python package (https://pypi.org/project/elasticsearch-dbapi/) has made it possible to enable communication between Superset and Elasticsearch using the existing SQL REST API.
 
