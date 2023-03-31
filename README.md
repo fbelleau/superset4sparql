@@ -1,5 +1,5 @@
 # superset4sparql
-A REST API to query SPARQL endpoint using Apache Superset BI tool
+A REST API to query SPARQL endpoints using Apache Superset BI tool using the elasticsearc-dbapi package.
 
 ## Example of a SQL query converted to SPARQL done by ChatGPT
 
