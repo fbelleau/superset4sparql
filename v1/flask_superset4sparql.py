@@ -7,7 +7,7 @@
 
 '''
 source venv/bin/activate
-export FLASK_APP=flask_superset4virtuoso.py 
+export FLASK_APP=flask_superset4bio2rdf.py 
 flask run --host=192.168.3.133 --debug
 '''
 
@@ -22,6 +22,11 @@ from flask import request
 url = "http://192.168.3.190:7006/"
 url = "http://192.168.3.190:8890/sparql"
 url = "http://bio2rdf.org/sparql"
+url = "https://sparql.rhea-db.org/sparql"
+url = "https://sparql.uniprot.org/sparql"
+#url = "https://knowledge.brc.riken.jp/bioresource/sparql"
+#url = "http://192.168.3.189:8890/sparql"
+url = "https://sparql.wikipathways.org/sparql"
 
 def create_alpha2() :
     alpha = []
@@ -75,6 +80,10 @@ def replace_identifier(query):
         before = f'ORDER BY "COUNT({l})"'
         after = f'ORDER BY ?count_{l}'
         #print(l+'-'+before+'-'+after+'-')
+        before = f'count(DISTINCT {l}) AS "COUNT_DISTINCT({l})"'
+        after = f'count(DISTINCT ?{l}) AS ?COUNT_DISTINCT_{l}'
+        query = query.replace(before, after)
+        
         query = query.replace(before, after)
 
     return query
@@ -259,7 +268,7 @@ def sql_query2sparql():
     query = content['query'].replace('\n',' ')
     print('QUERY_IN\n', query)
 
-    query = query.replace('# PREFIX ','PREFIX ')
+    query = query.replace('$PREFIX ','PREFIX ')
 
 
     query = query.replace('SELECT t AS t ','SELECT ?t ')
