@@ -1,0 +1,18 @@
+SELECT DISTINCT *
+WHERE {
+?p rdf:type wp:Pathway .
+?p dc:identifier ?i .
+?p dc:title ?t .
+?p wp:organismName ?n  .
+}
+
+SELECT DISTINCT *
+WHERE {
+?p rdf:type wp:Pathway .
+?p wp:organismName ?n  .
+
+?c dcterms:isPartOf ?p .
+?c rdf:type wp:GeneProduct .
+?c rdfs:label ?t1 .
+}
+
