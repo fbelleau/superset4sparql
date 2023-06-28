@@ -9,6 +9,7 @@ WHERE {
 SELECT DISTINCT *
 WHERE {
 ?p rdf:type wp:Pathway .
+?p dc:title ?t .
 ?p wp:organismName ?n  .
 
 ?c dcterms:isPartOf ?p .
@@ -16,3 +17,33 @@ WHERE {
 ?c rdfs:label ?t1 .
 }
 
+SELECT DISTINCT *
+WHERE {
+?p rdf:type wp:Pathway .
+?p dc:title ?t .
+?p wp:organismName ?n  .
+
+?c dcterms:isPartOf ?p .
+?c rdf:type wp:Metabolite .
+?c rdfs:label ?t1 .
+}
+
+# main query
+
+SELECT DISTINCT *
+WHERE {
+?p rdf:type wp:Pathway .
+?p dc:identifier ?i .
+?p dc:title ?t .
+  
+?p wp:organismName ?n  .
+
+?c dcterms:isPartOf ?p .
+?c rdf:type wp:GeneProduct .
+?c rdfs:label ?t1 .
+
+?c dcterms:isPartOf ?p .
+?c rdf:type wp:Metabolite .
+?c rdfs:label ?t1 .
+
+}
